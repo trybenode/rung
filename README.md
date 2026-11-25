@@ -90,7 +90,3 @@ stellar contract invoke --id rung_escrow --source-account alice --network testne
 - The review window is stored per job. The app picks it from the freelancer's trust tier and
   the freelancer accepts it by accepting the job. It is used for auto-release tomorrow.
 
-## Day 2 (Thursday)
-
-Auto-release after the review window, dispute freeze, evidence fingerprints from both sides,
-arbiter ruling (to freelancer, to client, or split), fixed arbiter fee, arbiter timeout.
