@@ -1,4 +1,4 @@
-# Backend and agent interface (draft, owned by the co-founder)
+# Backend and agent interface (draft, owned by the Abdulhaq)
 
 The web app (Allen) codes against this. Change it freely, but tell Allen in the group when you do.
 Keep it small. The contract holds the money and the state. The backend holds files, profiles and the agent.

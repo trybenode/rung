@@ -8,9 +8,9 @@ Two people, one repo, separate folders. If you do not edit the same files, you d
 |---|---|---|
 | `contracts/` | Allen | Escrow contract, tests, deploys. Interface in `docs/INTERFACE.md` is frozen |
 | `web/` | Allen | Next.js app: Freighter wallet, create job, job page, freelancer page, dispute and support screens |
-| `backend/` | Co-founder | API and database: profiles, tiers, evidence upload and SHA-256, support queue, signs the arbiter ruling |
-| `agent/` | Co-founder | Arbiter agent: reads both sides, recommends a ruling (shares logic with the Agentware project) |
-| `docs/API.md` | Co-founder | Backend and agent endpoints. Change it freely, tell Allen |
+| `backend/` | Abdulhaq | API and database: profiles, tiers, evidence upload and SHA-256, support queue, signs the arbiter ruling |
+| `agent/` | Abdulhaq | Arbiter agent: reads both sides, recommends a ruling (shares logic with the Agentware project) |
+| `docs/API.md` | Abdulhaq | Backend and agent endpoints. Change it freely, tell Allen |
 | `deployments/` | Allen | Contract ID and public addresses. Everyone reads it |
 
 Swap anything that does not match your strengths. Just say so in the group before starting.
@@ -20,16 +20,16 @@ Swap anything that does not match your strengths. Just say so in the group befor
 The Agentware hackathon runs Nov 27 to 30, so the Stellar work is front-loaded and the middle days stay small.
 
 **Wed Nov 25 (today)**
-- Allen: push this repo, invite the co-founder, build and deploy the Day 2 contract (`docs/DEMO_CLI.md`), fill `deployments/testnet.json`, run the dispute flow from the terminal once. Start the Next.js app and Freighter connect.
-- Co-founder: clone, read `docs/INTERFACE.md` and `docs/API.md`. Backend skeleton: database tables, `/health`, `/freelancers/:address`, evidence upload that returns a SHA-256. Agent first cut against the JSON shape in `docs/API.md`.
+- Allen: push this repo, invite the Abdulhaq, build and deploy the Day 2 contract (`docs/DEMO_CLI.md`), fill `deployments/testnet.json`, run the dispute flow from the terminal once. Start the Next.js app and Freighter connect.
+- Abdulhaq: clone, read `docs/INTERFACE.md` and `docs/API.md`. Backend skeleton: database tables, `/health`, `/freelancers/:address`, evidence upload that returns a SHA-256. Agent first cut against the JSON shape in `docs/API.md`.
 
 **Thu Nov 26**
 - Allen: create-job screen (reads the tier, sets the terms), job page (milestones, approve, dispute), freelancer actions (accept, submit).
-- Co-founder: tier rules and the admin verify endpoint, `/disputes/:id/:index/analyze`, the support queue, and `/rule` which signs `resolve_dispute` with the arbiter key. A small keeper script that calls `claim_after_window` and `arbiter_timeout` when due is a bonus.
+- Abdulhaq: tier rules and the admin verify endpoint, `/disputes/:id/:index/analyze`, the support queue, and `/rule` which signs `resolve_dispute` with the arbiter key. A small keeper script that calls `claim_after_window` and `arbiter_timeout` when due is a bonus.
 
 **Fri Nov 27 to Mon Nov 30 (Agentware days)**: integration only, about two hours a day each.
 - Allen: connect the app to the backend (evidence upload, then hash, then `submit_milestone`), dispute screen, support screen.
-- Co-founder: fix backend bugs, tune the agent prompt, prepare demo data.
+- Abdulhaq: fix backend bugs, tune the agent prompt, prepare demo data.
 
 **Mon Nov 30 evening**: feature freeze. Record the demo video. **Tue Dec 1**: submit by the afternoon, not at midnight.
 
@@ -53,5 +53,5 @@ Testnet only. Each person can make their own identities with `stellar keys gener
 secret (carol). Allen sends it privately, never in git or in the group chat.
 
 ## Handoffs
-- Allen to co-founder: contract ID, the `deployments/testnet.json` file, and the generated TypeScript bindings if needed.
-- Co-founder to Allen: backend running locally or deployed, base URL in `web/.env.example`, endpoints that match `docs/API.md`.
+- Allen to Abdulhaq: contract ID, the `deployments/testnet.json` file, and the generated TypeScript bindings if needed.
+- Abdulhaq to Allen: backend running locally or deployed, base URL in `web/.env.example`, endpoints that match `docs/API.md`.
